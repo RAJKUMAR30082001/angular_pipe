@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Management</title>
+</head>
+<body>
+
+  <h1>Book Management</h1>
+  <div *ngIf="homeFlag">
+  <button id="addBookBtn" (click)="add()">Add Book</button>
+  <button id="searchBookBtn" (click)="search()">Search Book</button>
+  </div>
+  <div *ngIf="addFlag">
+    <app-book-add></app-book-add>
+  </div>
+  <div *ngIf="searchFlag">
+    <app-search-book></app-search-book>
+  </div>
+
+</body>
+</html>

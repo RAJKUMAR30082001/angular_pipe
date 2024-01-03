@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Information Form</title>
+</head>
+<body>
+
+  <form  #bookdetail="ngForm" [formGroup]="bookDetail" (ngSubmit)="Submit()">
+    <label for="bookName">Book Name:</label>
+    <input type="text" id="bookName" name="bookName" formControlName="bookName" required>
+    <br>
+
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" formControlName="author" required>
+    <br>
+
+    <label>Journal:</label>
+    <br>
+    <input type="radio" id="history" name="journal" value="History" formControlName="journal">
+    <label for="history">History</label>
+    <br>
+
+    <input type="radio" id="social" name="journal" value="Social"  formControlName="journal">
+    <label for="social">Social</label>
+    <br>
+
+    <input type="radio" id="adventure" name="journal" value="Adventure" formControlName="journal" >
+    <label for="adventure">Adventure</label>
+    <br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <button (click)="back()">click to home</button>
+
+</body>
+</html>

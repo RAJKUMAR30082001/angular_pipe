@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Form</title>
+</head>
+<body>
+
+  <form [formGroup]="searchBook" (ngSubmit)="submit()">
+    <label>
+      <input type="radio" name="searchType" value="author" formControlName="searchType" >
+      Search by Author Name
+    </label>
+
+    <label>
+      <input type="radio" name="searchType" value="book" formControlName="searchType">
+      Search by Book Name
+    </label>
+
+    <br>
+
+    <label for="searchTerm">Search Term:</label>
+    <input type="text" id="searchTerm" name="searchTerm" required formControlName="inputValue">
+
+    <br>
+
+    <button type="submit">Search</button>
+  </form>
+
+  <div *ngIf="display">
+    <ul *ngFor="let book of FilteredBook">
+        <li>{{book.bookName| uppercase}}-{{book.author| uppercase}}-{{book.journal|uppercase}}-{{book.Price|currency}}</li>
+    </ul>
+</div>
+
+<button (click)="home()">click to home</button>
+
+</body>
+</html>
+
